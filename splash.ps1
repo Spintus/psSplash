@@ -58,13 +58,13 @@
         System.String
         System.Int32
 
-        You can pipe an array of strings ASCIISplashPageScroller.ps1.
+        You can pipe an array of strings splash.ps1.
 
     .OUTPUTS
         None.
 
     .EXAMPLE
-        > & ...\ASCIISplashPageScroller.ps1..ps1 -Splash (gc '.\Quazar.txt') -BufferPref
+        > & ...\splash.ps1..ps1 -Splash (gc '.\Quazar.txt') -BufferPref
         10 -FrameDelay 125
 
         Call script and provide contents of 'Quazar.txt' as the input to be animated.
@@ -80,7 +80,13 @@
 param
 (
     [Parameter(Position = 0, ValueFromPipeline)]
-    [string[]] $Splash           = (Get-Content (Resolve-Path "\\qa\tmp\Will\BI Assets\IdentiFlight.txt")),
+    [string[]] $Splash           = @('"ROFL:ROFL:ROFL:ROFL"'
+                                     '         _^___       '
+                                     ' L    __/   [] \     '
+                                     'LOL===__        \    '
+                                     ' L      \________]   '
+                                     '         I   I       '
+                                     '        --------/    '),
     [int]      $BufferPref       = 10,
     [int]      $FrameDelay       = 100,
     [int]      $LoopDelay        = 2000,
